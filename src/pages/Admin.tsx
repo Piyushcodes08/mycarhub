@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { motion } from 'framer-motion';
-import { useLeadStore } from '@/stores/useLeadStore';
+import { useLeadStore, type Lead } from '@/stores/useLeadStore';
 import { Trash2, ExternalLink, Clock, CheckCircle2, PhoneCall } from 'lucide-react';
 import { toast } from 'sonner';
 
@@ -106,7 +106,7 @@ const Admin = () => {
                   <div className="flex flex-row md:flex-col justify-end gap-3 min-w-[150px]">
                     <select
                       value={lead.status}
-                      onChange={(e) => updateLeadStatus(lead.id, e.target.value as any)}
+                      onChange={(e) => updateLeadStatus(lead.id, e.target.value as Lead['status'])}
                       className="bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-[var(--primary)] transition-all cursor-pointer"
                     >
                       <option value="New">New</option>
