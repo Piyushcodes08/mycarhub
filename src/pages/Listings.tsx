@@ -25,7 +25,7 @@ const Listings = () => {
   const filtered = useMemo(() => {
     return featuredCars.filter((c) => {
       const matchesSearch = c.name.toLowerCase().includes(search.toLowerCase()) ||
-                            c.brand.toLowerCase().includes(search.toLowerCase());
+        c.brand.toLowerCase().includes(search.toLowerCase());
       const matchesTab = activeTab === 'All' || c.category === activeTab;
       return matchesSearch && matchesTab;
     });
@@ -40,16 +40,16 @@ const Listings = () => {
 
       <div className="min-h-screen bg-[var(--bg-main)]">
         {/* New Hero Section */}
-        <section className="relative h-[90vh] flex items-center justify-center overflow-hidden mb-12">
+        <section className="relative h-[50vh] flex items-center justify-center overflow-hidden mb-12">
           <div className="absolute inset-0 z-0">
-            <img 
-              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=1600&q=80" 
-              alt="Elite Inventory" 
+            <img
+              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=1600&q=80"
+              alt="Elite Inventory"
               className="w-full h-full object-cover scale-105 blur-[2px]"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-[var(--bg-main)]" />
           </div>
-          
+
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -66,8 +66,8 @@ const Listings = () => {
 
         <div className="max-w-7xl mx-auto px-6">
           <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }} 
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
             >
@@ -86,11 +86,10 @@ const Listings = () => {
                 <button
                   key={cat}
                   onClick={() => setActiveTab(cat)}
-                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${
-                    activeTab === cat 
-                    ? 'bg-[var(--primary)] text-white shadow-[0_0_20px_rgba(240,78,93,0.4)]' 
-                    : 'bg-[var(--bg-card)] text-gray-400 hover:text-white border border-white/5'
-                  }`}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 whitespace-nowrap ${activeTab === cat
+                      ? 'bg-[var(--primary)] text-white shadow-[0_0_20px_rgba(240,78,93,0.4)]'
+                      : 'bg-[var(--bg-card)] text-gray-400 hover:text-white border border-white/5'
+                    }`}
                 >
                   {cat}
                 </button>
@@ -110,8 +109,8 @@ const Listings = () => {
                   className="w-full pl-12 pr-4 py-3 rounded-xl bg-white/5 border border-white/5 text-white placeholder:text-gray-500 focus:outline-none focus:border-[var(--primary)]/50 transition-all"
                 />
               </div>
-              
-              <button 
+
+              <button
                 onClick={() => setIsFilterOpen(!isFilterOpen)}
                 className="flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[var(--primary)] text-white font-semibold hover:brightness-110 transition-all active:scale-95"
               >
@@ -141,7 +140,7 @@ const Listings = () => {
           </div>
 
           {/* --- MAIN GRID --- */}
-          <motion.div 
+          <motion.div
             variants={containerVariants}
             initial="hidden"
             animate="visible"
@@ -156,7 +155,7 @@ const Listings = () => {
 
           {/* --- EMPTY STATE --- */}
           {filtered.length === 0 && (
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               className="text-center py-20"
@@ -166,8 +165,8 @@ const Listings = () => {
               </div>
               <h3 className="text-2xl font-bold text-white mb-2">No cars match your search</h3>
               <p className="text-gray-400">Try adjusting your filters or searching for something else.</p>
-              <button 
-                onClick={() => {setSearch(''); setActiveTab('All');}}
+              <button
+                onClick={() => { setSearch(''); setActiveTab('All'); }}
                 className="mt-6 text-[var(--primary)] font-medium hover:underline"
               >
                 Clear all filters
