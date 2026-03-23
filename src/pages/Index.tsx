@@ -64,7 +64,7 @@ const Index = () => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-6 border border-primary/20">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-white text-sm font-medium mb-6 border border-primary/20">
             <Zap className="w-4 h-4" />
             The Future of Car Buying
           </span>
