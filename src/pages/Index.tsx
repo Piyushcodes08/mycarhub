@@ -44,10 +44,18 @@ const Index = () => (
 
     {/* Hero */}
     <section className="relative min-h-screen flex items-center justify-center px-4 pt-24 overflow-hidden">
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent/10 rounded-full blur-[100px]" />
-        <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-primary/5 rounded-full blur-[100px] animate-float" />
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=1600&q=80" 
+          alt="Luxury Car Background" 
+          className="w-full h-full object-cover opacity-40 blur-[1px]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-[var(--bg-main)]/80 to-[var(--bg-main)]" />
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[140px] opacity-50" />
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent/20 rounded-full blur-[120px] opacity-40" />
       </div>
 
       <div className="relative z-10 text-center max-w-3xl mx-auto">

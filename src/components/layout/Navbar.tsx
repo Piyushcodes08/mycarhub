@@ -5,8 +5,11 @@ import { Car, Menu, X, Gauge, Phone } from 'lucide-react';
 
 const navLinks = [
   { to: '/', label: 'Home' },
-  { to: '/listings', label: 'Listings' },
+  { to: '/listings', label: 'Inventory' },
+  { to: '/services', label: 'Services' },
+  { to: '/about', label: 'About' },
   { to: '/valuation', label: 'Valuation' },
+  { to: '/inquiry', label: 'Contact' },
 ];
 
 export const Navbar = () => {
@@ -52,8 +55,14 @@ export const Navbar = () => {
 
         <div className="hidden md:flex items-center gap-3">
           <Link
+            to="/admin"
+            className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Admin
+          </Link>
+          <Link
             to="/valuation"
-            className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-xl bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-xl bg-primary text-white hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20"
           >
             <Gauge className="w-4 h-4" />
             Get Valuation

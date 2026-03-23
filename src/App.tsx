@@ -13,6 +13,10 @@ const Index = lazy(() => import('./pages/Index'));
 const Listings = lazy(() => import('./pages/Listings'));
 const CarDetails = lazy(() => import('./pages/CarDetails'));
 const Valuation = lazy(() => import('./pages/Valuation'));
+const Inquiry = lazy(() => import('./pages/Inquiry'));
+const Admin = lazy(() => import('./pages/Admin'));
+const About = lazy(() => import('./pages/About'));
+const Services = lazy(() => import('./pages/Services'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
 const queryClient = new QueryClient({
@@ -49,6 +53,10 @@ const App = () => (
                 <Route path="/listings" element={<Listings />} />
                 <Route path="/car/:id" element={<CarDetails />} />
                 <Route path="/valuation" element={<Valuation />} />
+                <Route path="/inquiry" element={<Inquiry />} />
+                <Route path="/admin" element={<Admin />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/services" element={<Services />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>

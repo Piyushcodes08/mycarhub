@@ -82,12 +82,20 @@ const CarDetails = () => {
                 ))}
               </div>
 
-              <Link
-                to="/listings"
-                className="mt-8 px-8 py-3.5 rounded-xl bg-primary text-primary-foreground font-semibold text-sm text-center hover:bg-primary/90 transition-colors"
-              >
-                Book a Test Drive
-              </Link>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
+                <Link
+                  to={`/inquiry?carId=${car.id}`}
+                  className="px-8 py-3.5 rounded-xl bg-primary text-white font-semibold text-sm text-center hover:brightness-110 transition-all shadow-lg shadow-primary/20"
+                >
+                  Inquire Now
+                </Link>
+                <Link
+                  to="/listings"
+                  className="px-8 py-3.5 rounded-xl glass text-white font-semibold text-sm text-center hover:bg-white/10 transition-all"
+                >
+                  View More
+                </Link>
+              </div>
             </div>
           </motion.div>
         </div>
