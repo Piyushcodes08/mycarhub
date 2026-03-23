@@ -45,7 +45,7 @@ const Services = () => {
 
       <div className="min-h-screen bg-[var(--bg-main)]">
         {/* Hero Section */}
-        <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
           <div className="absolute inset-0 z-0">
             <img 
               src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1600&q=80" 
@@ -123,3 +123,5 @@ const ProcessStep = ({ number, title, desc }: ProcessStepProps) => (
     <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
   </div>
 );
+
+export default Services;
